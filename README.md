@@ -89,52 +89,87 @@ The modular design enables users to perform customized analyses tailored to spec
 - autogluon
 - tpot
 
-推荐使用 **Python 3.8**。
+推荐使用 **Python 3.10**。
 
 ---
 
-### ⚙️ 安装 GDAL
+### 🔧 Installation from GitHub
 
-本项目涉及空间数据处理，推荐使用 **conda** 安装 GDAL，以避免复杂的依赖问题：
+#### ⚙️ Install GDAL
+
+This project involves spatial data processing. It is recommended to use conda to install GDAL to avoid complex dependency issues:
 
 ```bash
 conda install -c conda-forge gdal
 ```
 
-### 🔧 从 GitHub 安装
-
-建议使用 conda 创建新的虚拟环境：
+It's also recommended to create a new virtual environment with conda:
 
 ```bash
-# 克隆仓库
-git clone https://github.com/yourusername/yourproject.git
-cd yourproject
+# Clone the repository
+git clone https://github.com/George-Horus/CPAM_v1.0.git
+cd CPAM_v1.0
 
-# 创建 conda 虚拟环境
+# Create a conda virtual environment
 conda create -n Gradio python=3.10
 
-# 激活环境
+# Activate the environment
 conda activate Gradio
 
-# 安装依赖
+# Install dependencies
 pip install -r requirements.txt
 
-# 启动项目
+# 启动项目Launch the project
 python Gradio_V11.py 
 ```
-随后点击终端生成的链接即可打开软件界面
-### 🐳 从 Docker 安装
+After running the last command, click the link generated in the terminal to open the application interface.
 
-如果不想手动配置 Python 环境，可以直接使用 Docker 镜像。
+## 🐳 Install via Docker
+
+### 1. Pull the Image from Docker Hub
 
 ```bash
-# 从 Docker Hub 拉取镜像
-docker pull yourdockerhubusername/yourproject:latest
-
-# 运行容器
-docker run -it -p 7860:7860 yourdockerhubusername/yourproject:latest
+docker pull georgehorus/cpam9.0:latest
 ```
-随后在终端中查看输出的链接，点击即可打开软件界面。
+
+### 2. Start the Container
+
+Use the following command to start the container and specify a local path for saving files:
+
+```bash
+docker run -it -p 7860:7860 -v <local-folder-path>:/app/output georgehorus/cpam9.0:latest
+```
+
+After launching, open your browser and navigate to:
+
+```
+http://localhost:7860/
+```
+
+This will connect you to the CPAM editor interface.
+
+---
+
+### 3. Output Directory Configuration and Example
+
+In the **Data Input** page, the **Set output directory** field must be set to:
+
+```
+output
+```
+
+This is because the output path inside the container is fixed to `/app/output`, and we use the Docker command to map this to a custom local folder.
+
+### Example:
+
+If you want to save the output results to the local folder `D:\Code_Store\results`, use the following command:
+
+```bash
+docker run -it -p 7860:7860 -v D:\Code_Store\results:/app/output georgehorus/cpam9.0:latest
+```
+
+This ensures that all output files are automatically saved to your specified local directory.
+
 
 ## Usage
 
