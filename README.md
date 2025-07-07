@@ -352,5 +352,3 @@ The interface for prescription map generation is shown in **Figure 6**.
 ![Prescription Map Interface](./images/Step6.PNG)
 
 *Figure 8. Prescription map generation interface in CPAM.*
-
-## Authors
