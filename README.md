@@ -70,7 +70,7 @@ The modular design enables users to perform customized analyses tailored to spec
 
 ## Installation
 
-本项目依赖以下 Python 库：
+This project relies on the following Python libraries:
 
 - gradio
 - pandas
@@ -89,7 +89,7 @@ The modular design enables users to perform customized analyses tailored to spec
 - autogluon
 - tpot
 
-推荐使用 **Python 3.10**。
+**Python 3.10** is recommended.
 
 ---
 
