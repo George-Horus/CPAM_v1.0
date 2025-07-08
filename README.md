@@ -347,7 +347,7 @@ These values are used to calculate the required fertilizer application rate.
 
 Finally, click the **Generate Grid Diagram** button to create the nitrogen-level classified grid map.
 
-The interface for prescription map generation is shown in **Figure 6**.
+The interface for prescription map generation is shown in **Figure 8**.
 
 ![Prescription Map Interface](./images/Step6.PNG)
 
